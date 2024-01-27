@@ -1,6 +1,6 @@
-public class WrongLoginException extends RuntimeException{
+public class WrongLoginException extends RuntimeException {
     public WrongLoginException(String message) {
 
-        super(message);
+         super(message);
     }
 }
