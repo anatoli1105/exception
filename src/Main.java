@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            metodForData("jjjjjjjj", "jjыв", "jj");
+            metodForData("jjjjKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK", "jj", "jj");
             System.out.println("ok.");
         } catch (WrongLoginException | WrongPasswordException o) {
             System.out.println(o.getMessage());
@@ -15,26 +15,21 @@ public class Main {
     }
 
     public static void metodForData(String login, String password, String confirmPassword) {
-        if (methodForLenght(login) == false) {
-            throw new WrongLoginException("!длина больше 20!");
-        }
-        if (!login.matches(REGEX) || !password.matches(REGEX)) {
-            throw new WrongLoginException("содержит неправильные символы");
+        if (checkLenghtEndSimbol(login) == false) {
+            throw new WrongLoginException("!длина логина больше 20,или логин содержить неправильные символы!");
         }
         if (!password.equals(confirmPassword)) {
             throw new WrongPasswordException("password и confirmPassword не равны");
         }
-        if (methodForLenght(password) == false) {
-            throw new WrongPasswordException("!длина больше 20!");
+        if (checkLenghtEndSimbol(password) == false) {
+            throw new WrongPasswordException("!длина пароля больше 20,или пароль  содержить неправильные символы!");
         }
 
     }
 
-    public static boolean methodForLenght(String string) {
-        if (string.length() > 20) {
-            return false;
-        }
-        return true;
+    public static boolean checkLenghtEndSimbol(String string) {
+
+        return string.length() > 20 && string.matches(REGEX);
     }
 
 
