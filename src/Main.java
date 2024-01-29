@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            metodForData("jjjjKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK", "jj", "jj");
+            metodForData("jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj", "jj", "jj");
             System.out.println("ok.");
         } catch (WrongLoginException | WrongPasswordException o) {
             System.out.println(o.getMessage());
@@ -29,7 +29,7 @@ public class Main {
 
     public static boolean checkLenghtEndSimbol(String string) {
 
-        return string.length() > 20 && string.matches(REGEX);
+        return string.length() < 20 && string.matches(REGEX);
     }
 
 

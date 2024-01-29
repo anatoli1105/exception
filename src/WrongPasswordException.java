@@ -1,7 +1,7 @@
-public class WrongPasswordException extends RuntimeException{
+public class WrongPasswordException extends RuntimeException {
     public WrongPasswordException(String message) {
 
 
-         super(message);
+        super(message);
     }
 }
