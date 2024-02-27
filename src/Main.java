@@ -1,17 +1,36 @@
+import java.util.Arrays;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
+    private static final String REGEX = "^[a-zA0-9_]*$";
+
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-
-
+        try {
+            metodForData("jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj", "jj", "jj");
+            System.out.println("ok.");
+        } catch (WrongLoginException | WrongPasswordException o) {
+            System.out.println(o.getMessage());
         }
     }
+
+    public static void metodForData(String login, String password, String confirmPassword) {
+        if (checkLenghtEndSimbol(login) == false) {
+            throw new WrongLoginException("!длина логина больше 20,или логин содержить неправильные символы!");
+        }
+        if (!password.equals(confirmPassword)) {
+            throw new WrongPasswordException("password и confirmPassword не равны");
+        }
+        if (checkLenghtEndSimbol(password) == false) {
+            throw new WrongPasswordException("!длина пароля больше 20,или пароль  содержить неправильные символы!");
+        }
+
+    }
+
+    public static boolean checkLenghtEndSimbol(String string) {
+
+        return string.length() < 20 && string.matches(REGEX);
+    }
+
+
 }

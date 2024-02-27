@@ -4,6 +4,7 @@ out/
 !**/src/test/**/out/
 .idea
 *.iml
+exception2.iml
 
 ### Eclipse ###
 .apt_generated
@@ -16,7 +17,6 @@ out/
 bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
-
 
 ### NetBeans ###
 /nbproject/private/
